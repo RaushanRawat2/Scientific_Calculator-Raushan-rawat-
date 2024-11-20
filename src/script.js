@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded",function(){
     
     let currentValue = "";
     function evaluateResult (){
-        const result = eval(currentValue);
+        const convertedValue = currentValue.replace('sin','Math.sin').replace('%','*0.01').replace('cos','Math.cos').replace('ln','Math.log').replace('π','Math.PI')
+
+        const result = eval(convertedValue);
         currentValue = result.toString()
         display.value = result;
     }
